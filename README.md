@@ -27,3 +27,11 @@ top to bottom.
 Box 3 is the bug. Boxes 1 and 2 show that the blur and the mask work on their own, box 4 shows
 that the combination works when the `BlurView` mounts after layout.
 
+## Likely cause
+
+`BlurEffectView` in `expo-blur` installs its blur effect in `draw(_:)`. UIKit does not call
+`draw(_:)` for a view that is 0 × 0, and with the default `contentMode` it does not call it again
+when the view gets a size. Children of `MaskedView` are hosted through SwiftUI and start at 0 × 0,
+so a `BlurView` that mounts together with the `MaskedView` never installs its effect. One that
+mounts later already has a size on its first draw.
+
