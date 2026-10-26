@@ -35,3 +35,9 @@ when the view gets a size. Children of `MaskedView` are hosted through SwiftUI a
 so a `BlurView` that mounts together with the `MaskedView` never installs its effect. One that
 mounts later already has a size on its first draw.
 
+## Local fix
+
+`packages/expo-blur/ios/BlurEffectView.swift`: apply the effect from `layoutSubviews()` when the
+bounds are not empty, instead of from `draw(_:)`, and re-apply it when `intensity` or `tint`
+change. With that change box 3 renders the same as box 4 (right screenshot).
+Pull request: https://github.com/expo/expo/pull/52291
