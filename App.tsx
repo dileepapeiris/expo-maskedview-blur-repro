@@ -58,6 +58,12 @@ export default function App() {
           <BlurView intensity={80} tint="dark" style={StyleSheet.absoluteFill} />
         </MaskedView>
       </Box>
+
+      <Box label="4. Same, BlurView mounted 1 s later">
+        <MaskedView maskElement={fade} style={StyleSheet.absoluteFill}>
+          {late ? <BlurView intensity={80} tint="dark" style={StyleSheet.absoluteFill} /> : null}
+        </MaskedView>
+      </Box>
     </View>
   );
 }
