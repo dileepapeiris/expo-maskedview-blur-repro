@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
+import { MaskedView } from '@expo/ui/community/masked-view';
+import { BlurView } from 'expo-blur';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+
+// Repro for https://github.com/expo/expo/issues/52282
+// Four boxes in front of colored stripes. Box 3 should look like box 4.
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.screen}>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  screen: { flex: 1, backgroundColor: '#fff', paddingTop: 70, paddingHorizontal: 16, gap: 12 },
+  item: { gap: 4 },
+  label: { fontSize: 14, color: '#333' },
+  box: { width: 300, height: 100, overflow: 'hidden', borderRadius: 8 },
 });
