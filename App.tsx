@@ -35,6 +35,12 @@ function Box({ label, children }: { label: string; children: React.ReactNode }) 
 }
 
 export default function App() {
+  const [late, setLate] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setLate(true), 1000);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <View style={styles.screen}>
       <Box label="1. BlurView alone">
