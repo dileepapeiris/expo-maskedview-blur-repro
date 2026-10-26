@@ -40,6 +40,12 @@ export default function App() {
       <Box label="1. BlurView alone">
         <BlurView intensity={80} tint="dark" style={StyleSheet.absoluteFill} />
       </Box>
+
+      <Box label="2. MaskedView with a plain View">
+        <MaskedView maskElement={fade} style={StyleSheet.absoluteFill}>
+          <View style={[StyleSheet.absoluteFill, { backgroundColor: 'rgba(0,0,0,0.7)' }]} />
+        </MaskedView>
+      </Box>
     </View>
   );
 }
