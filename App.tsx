@@ -19,6 +19,9 @@ function Stripes() {
   );
 }
 
+// Same mask as the docs "Alpha-fade mask" example, but from top (opaque) to bottom (transparent).
+const fade = <LinearGradient colors={['black', 'transparent']} style={StyleSheet.absoluteFill} />;
+
 export default function App() {
   return (
     <View style={styles.screen}>
