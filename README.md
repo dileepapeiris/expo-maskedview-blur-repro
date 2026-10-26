@@ -24,3 +24,6 @@ top to bottom.
 | 3 | `MaskedView` with a `BlurView`, mounted together | blurred fade | **nothing, the stripes stay sharp** |
 | 4 | Same, `BlurView` mounted 1 s later | blurred fade | blurred fade |
 
+Box 3 is the bug. Boxes 1 and 2 show that the blur and the mask work on their own, box 4 shows
+that the combination works when the `BlurView` mounts after layout.
+
