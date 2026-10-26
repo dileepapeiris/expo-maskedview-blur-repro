@@ -22,6 +22,18 @@ function Stripes() {
 // Same mask as the docs "Alpha-fade mask" example, but from top (opaque) to bottom (transparent).
 const fade = <LinearGradient colors={['black', 'transparent']} style={StyleSheet.absoluteFill} />;
 
+function Box({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <View style={styles.item}>
+      <Text style={styles.label}>{label}</Text>
+      <View style={styles.box}>
+        <Stripes />
+        {children}
+      </View>
+    </View>
+  );
+}
+
 export default function App() {
   return (
     <View style={styles.screen}>
