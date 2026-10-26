@@ -9,6 +9,16 @@ import { StyleSheet, Text, View } from 'react-native';
 
 const STRIPES = ['#e53935', '#fdd835', '#1e88e5', '#43a047', '#8e24aa', '#fb8c00'];
 
+function Stripes() {
+  return (
+    <View style={StyleSheet.absoluteFill}>
+      {STRIPES.map((c, i) => (
+        <View key={i} style={{ flex: 1, backgroundColor: c }} />
+      ))}
+    </View>
+  );
+}
+
 export default function App() {
   return (
     <View style={styles.screen}>
