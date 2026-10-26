@@ -7,6 +7,8 @@ import { StyleSheet, Text, View } from 'react-native';
 // Repro for https://github.com/expo/expo/issues/52282
 // Four boxes in front of colored stripes. Box 3 should look like box 4.
 
+const STRIPES = ['#e53935', '#fdd835', '#1e88e5', '#43a047', '#8e24aa', '#fb8c00'];
+
 export default function App() {
   return (
     <View style={styles.screen}>
