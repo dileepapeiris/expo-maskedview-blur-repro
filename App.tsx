@@ -37,6 +37,9 @@ function Box({ label, children }: { label: string; children: React.ReactNode }) 
 export default function App() {
   return (
     <View style={styles.screen}>
+      <Box label="1. BlurView alone">
+        <BlurView intensity={80} tint="dark" style={StyleSheet.absoluteFill} />
+      </Box>
     </View>
   );
 }
